@@ -31,7 +31,7 @@ app.get('/oauth/strava', (req, res) => {
             res.end(error)
             return console.error('POST failed:', err);
         }
-        console.log('POST successful!  Server responded with:', body);
+        console.log('POST successful! Server responded with:', body);
         res.end(body)
     })
     
