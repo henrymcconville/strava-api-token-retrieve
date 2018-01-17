@@ -11,7 +11,7 @@ A basic Dockerised node app to generate bearer tokens to use with the Strava API
 
 ## Usage
 
-### Docker Compose
+### Docker Compose
 
 Example docker-compose.yml
 ```
