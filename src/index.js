@@ -2,13 +2,13 @@ const express = require('express')
 const request = require('request')
 const app = express()
 
-const OAUTH_REDIRECT_URI = process.env.OAUTH_REDIRECT_URI;
+const SERVICE_HOSTNAME = process.env.SERVICE_HOSTNAME;
 const STRAVA_CLIENT_ID = process.env.STRAVA_CLIENT_ID;
 const STRAVA_CLIENT_SECRET = process.env.STRAVA_CLIENT_SECRET;
 const STRAVA_SCOPE = process.env.STRAVA_SCOPE || 'view_private';
 
 app.get('/', (req, res) => {
-    const url = `https://www.strava.com/oauth/authorize?client_id=${STRAVA_CLIENT_ID}&response_type=code&redirect_uri=${OAUTH_REDIRECT_URI}&scope=${STRAVA_SCOPE}`
+    const url = `https://www.strava.com/oauth/authorize?client_id=${STRAVA_CLIENT_ID}&response_type=code&redirect_uri=${SERVICE_HOSTNAME}/oauth/strava&scope=${STRAVA_SCOPE}`
     res.send(`<a href="${url}">Authorize Strava</a>`)
 });
 
